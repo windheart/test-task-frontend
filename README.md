@@ -1,4 +1,54 @@
-test-task-frontend
-==================
+# Installation
+---
 
-A Symfony project created on March 28, 2016, 12:23 pm.
+Installation process for debian-based systems.
+
+### Requirements
+----
+
+* PHP 5.5 or newer
+* Any webserver: [Apache](installation.md#markdown-header-apache-settings), nginx etc.
+* [Mysql](installation.md#markdown-header-mysql-databases)
+* GIT
+
+```
+sudo su
+apt-get install php5 apache2 mysql-server mysql-client php5-mysql git
+```
+
+
+#### PHP Libraries
+* Intl
+* Curl
+* Composer
+* PDO
+
+~~~~
+sudo su
+
+apt-get install curl php5-curl php5-intl
+~~~~
+
+We don't store composer.phar in the git, so you need to download it manually and install to common bin directory
+
+~~~~
+sudo su
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
+chmod +x /usr/local/bin/composer.phar
+mv /usr/local/bin/composer.phar /usr/local/bin/composer
+~~~~
+
+# Set up the project
+----
+
+### Get code
+---
+
+``` git clone git@github.com:payeverworldwide/test-task-frontend.git <target directory name> ```
+
+### Configuration
+
+Install vendors:
+
+``` composer install ```
+
