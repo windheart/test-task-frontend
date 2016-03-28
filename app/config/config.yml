@@ -65,11 +65,19 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-jms_di_extra:
-    locations:
-        all_bundles: false
-        bundles: [AppBundle]
-        directories: ["%kernel.root_dir%/../src"]
+# Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    bundles:
+        - AppBundle
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        compass:
+          apply_to: "\.scss$"
+        coffee:
+          apply_to: "\.coffee$"
 
 fos_rest:
     view:
@@ -91,3 +99,6 @@ fos_rest:
     routing_loader:
         default_format: json
     param_fetcher_listener: true
+
+mopa_bootstrap:
+    form: ~  # Adds twig form theme  support
