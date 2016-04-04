@@ -52,3 +52,8 @@ Install vendors:
 
 ``` composer install ```
 
+### DataBase
+
+- Create mysql database
+- Setup its name in projects config
+- Load doctrine fixtures
