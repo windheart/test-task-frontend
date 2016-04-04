@@ -52,7 +52,7 @@ Install vendors:
 
 ``` composer install ```
 
-### DataBase
+### Database
 
 - Create mysql database
 - Setup its name in projects config
