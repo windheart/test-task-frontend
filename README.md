@@ -55,5 +55,5 @@ Install vendors:
 ### Database
 
 - Create mysql database
-- Setup its name in projects config
+- Create database schema
 - Load doctrine fixtures
