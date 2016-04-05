@@ -53,7 +53,10 @@ Install vendors:
 ``` composer install ```
 
 ### Database
-
+(run commands from project root)
 - Create mysql database
+    ``` php app/console doctrine:database:create ```
 - Create database schema
+    ``` php app/console doctrine:schema:create ```
 - Load doctrine fixtures
+    ``` php app/console doctrine:fixtures:load ```
