@@ -4,7 +4,6 @@ var ejs = require('ejs');
 var sass   = require('gulp-sass');
 
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
 var clean = require('gulp-clean');
 
 
