@@ -86,7 +86,7 @@ class UserFormHandler extends DefaultFormHandler
      */
     protected function getFormOptions()
     {
-        return ['csrf_protection' => true];
+        return ['csrf_protection' => false];
     }
 
     /**

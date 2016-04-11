@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
+            <h1 class="header-title">Application form</h1>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-10 header-toolbar">
+            <a href="users/<%- id %>/edit" data-action="edit" class="header-button">Edit</a>
+        </div>
+    </div>
+    <div class="row content">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-10">
+            <div class="user-info">
+                <h2 class="user-name">
+                    <%- userName %>
+                </h2>
+                <p class="user-birthday">
+                    <%- birthday(userBirthday) %>
+                </p>
+                <p class="user-email">
+                    <%- userEmail %>
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-10">
+            <div class="user-info">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-10">
+                        <ul class="list-unstyled user-info-list">
+                            <li><%- siteUrl %></li>
+                            <li><%- userPhone %></li>
+                            <li><%- userSkill %></li>
+                            <li><%- gender(userGender) %></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-10">
+                        <div class="user-info-text">
+                            <p><%- userAbout %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e522c16cb455ac2edf83cb0d84985b8",
-    "content-hash": "44a546748ab3b6edb9da37ba8cd180bf",
+    "hash": "5a1562b88421d5201f8c18899a7b339f",
+    "content-hash": "7766130ba3c5aefec943934678f329e4",
     "packages": [
         {
             "name": "components/backbone",
@@ -2769,6 +2769,69 @@
             "description": "Symfony Security Component - ACL (Access Control List)",
             "homepage": "https://symfony.com",
             "time": "2015-12-28 09:39:09"
+        },
+        {
+            "name": "symfony/serializer",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/serializer.git",
+                "reference": "3dc02a27ede11221a6a9604369333baa5c7a16dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/3dc02a27ede11221a6a9604369333baa5c7a16dc",
+                "reference": "3dc02a27ede11221a6a9604369333baa5c7a16dc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "doctrine/annotations": "~1.0",
+                "doctrine/cache": "~1.0",
+                "symfony/config": "~2.8|~3.0",
+                "symfony/property-access": "~2.8|~3.0",
+                "symfony/yaml": "~2.8|~3.0"
+            },
+            "suggest": {
+                "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
+                "doctrine/cache": "For using the default cached annotation reader and metadata cache.",
+                "symfony/config": "For using the XML mapping loader.",
+                "symfony/property-access": "For using the ObjectNormalizer.",
+                "symfony/yaml": "For using the default YAML mapping loader."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Serializer\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Serializer Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-03-10 10:34:12"
         },
         {
             "name": "symfony/swiftmailer-bundle",

@@ -7,6 +7,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+
+
 class DefaultController extends Controller
 {
     /** @var  User */
@@ -20,11 +25,17 @@ class DefaultController extends Controller
         $this->initUser();
         $handler = $this->get('frontend.form_handlers.user')->setModel($this->user);
 
+        $encoders = array(new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+
+        $serializer = new Serializer($normalizers, $encoders);
+        
         return $this->render('default/index.html.twig', array(
             'form' => $handler->getBuiltFormView(),
-            'user' => $this->user,
+            'user' => $serializer->serialize($this->user, 'json'),
         ));
     }
+
 
     /**
      * Handles user form ajax submission
