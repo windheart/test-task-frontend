@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a1562b88421d5201f8c18899a7b339f",
-    "content-hash": "7766130ba3c5aefec943934678f329e4",
+    "hash": "8cd1027fbc589e88a66ff27001def731",
+    "content-hash": "b98a1881fea12714f690a359bbd70ef5",
     "packages": [
         {
             "name": "components/backbone",
