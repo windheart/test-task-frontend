@@ -50,9 +50,9 @@ mv /usr/local/bin/composer.phar /usr/local/bin/composer
 
 Install vendors:
 
-``` composer install ```
-``` npm install ```
-``` npm gulp ```
+composer install
+npm install
+gulp
 
 ### Database
 (run commands from project root)
