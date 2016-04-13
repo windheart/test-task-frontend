@@ -1,3 +1,86 @@
+{% extends 'default/index.html.twig' %}
+
+{% form_theme form _self %}
+
+{% block _user_userName_row %}
+    <div class="form-group col-lg-5 col-md-5 col-sm-5">
+        <label for="user-name" class="invisible">User Name</label>
+        <input name="user[userName]"  value="<%- userName %>" type="text" class="form-control" id="user-name" placeholder="User Name">
+    </div>
+{% endblock %}
+
+{% block _user_userBirthday_row %}
+    <div class="form-group col-lg-3 col-md-3 col-sm-3">
+        <label for="user-birthday" class="invisible">Birthday</label>
+        <input name="user[userBirthday]"  value="<%- birthday(userBirthday) %>" type="text" class="form-control" id="user-birthday" placeholder="Birthday">
+    </div>
+{% endblock %}
+
+{% block _user_userEmail_row %}
+    <div class="form-group col-lg-5 col-md-5 col-sm-5">
+        <label for="user-email" class="invisible">Email</label>
+        <input name="user[userEmail]" value="<%- userEmail %>" type="text" class="form-control" id="user-email" placeholder="Email">
+    </div>
+{% endblock %}
+
+{% block _user_siteUrl_row %}
+    <div class="form-group col-lg-5 col-md-5 col-sm-5">
+        <label for="site-url" class="invisible">URL</label>
+        <input name="user[siteUrl]" value="<%- siteUrl %>" type="text" class="form-control" id="site-url" placeholder="URL">
+    </div>
+{% endblock %}
+
+{% block _user_userPhone_row %}
+<div class="form-group col-lg-5 col-md-5 col-sm-5">
+    <label for="user-phone" class="invisible">Phone number</label>
+    <input name="user[userPhone]" value="<%- userPhone %>" type="text" class="form-control" id="user-phone" placeholder="Phone number">
+</div>
+{% endblock %}
+
+{% block _user_userSkill_row %}
+<div class="form-group col-lg-2 col-md-2 col-sm-2">
+    <label for="user-skill" class="invisible">Skill number</label>
+    <input name="user[userSkill]" value="<%- userSkill %>" type="text" class="form-control" id="user-skill" placeholder="Skill number">
+</div>
+{% endblock %}
+
+{% block _user_userGender_row %}
+<div class="form-group col-lg-3 col-md-3 col-sm-3 user-form-gender">
+    <label class="radio-inline">
+        <input name="user[userGender]" <%- gender(userGender, 0) %> type="radio" id="user-gender-male" value="0">
+        <span>Male</span>
+    </label>
+    <label class="radio-inline">
+        <input name="user[userGender]" <%- gender(userGender, 1) %> type="radio" id="user-gender-female" value="1">
+        <span>Female</span>
+    </label>
+</div>
+{% endblock %}
+
+{% block _user_password_row %}
+    <div class="row">
+        <div class="form-group col-lg-4 col-md-4 col-sm-4">
+            <label for="password" class="invisible">Password</label>
+            <input name="user[password][first]" type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group col-lg-4 col-md-4 col-sm-4">
+            <label for="repeat-password" class="invisible">Repeat password</label>
+            <input name="user[password][second]" type="password" class="form-control" id="repeat-password" placeholder="Repeat password">
+        </div>
+    </div>
+{% endblock %}
+
+{% block _user_userAbout_row %}
+    <div class="row">
+        <div class="form-group col-lg-10 col-md-10 col-sm-10">
+            <label for="user-about" class="invisible">Enter a brief description of yourself and interest</label>
+            <input name="user[userAbout]" value="<%- userAbout %>" type="text" class="form-control" id="user-about" placeholder="Enter a brief description of yourself and interest">
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block user_edit %}
 <script type="text/template" id="templates-user-edit">
     <div class="container-fluid user-form-header">
         <div class="row">
@@ -12,65 +95,27 @@
     </div>
     <div class="container-fluid user-form-content">
         <h1 class="user-form-content-title">Application form</h1>
-        <form>
-            {#<input type="hidden" name="id" value="<%- id %>">#}
+
+        {{ form_start(form) }}
             <div class="row">
-                <div class="form-group col-lg-5 col-md-5 col-sm-5">
-                    <label for="user-name" class="invisible">User Name</label>
-                    <input name="user[userName]"  value="<%- userName %>" type="text" class="form-control" id="user-name" placeholder="User Name">
-                </div>
-                <div class="form-group col-lg-3 col-md-3 col-sm-3">
-                    <label for="user-birthday" class="invisible">Birthday</label>
-                    <input name="user[userBirthday]"  value="<%- birthday(userBirthday) %>" type="text" class="form-control" id="user-birthday" placeholder="Birthday">
-                </div>
+                {{ form_row(form.userName) }}
+                {{ form_row(form.userBirthday) }}
             </div>
             <div class="row">
-                <div class="form-group col-lg-5 col-md-5 col-sm-5">
-                    <label for="user-email" class="invisible">Email</label>
-                    <input name="user[userEmail]" value="<%- userEmail %>" type="text" class="form-control" id="user-email" placeholder="Email">
-                </div>
-                <div class="form-group col-lg-5 col-md-5 col-sm-5">
-                    <label for="site-url" class="invisible">URL</label>
-                    <input name="user[siteUrl]" value="<%- siteUrl %>" type="text" class="form-control" id="site-url" placeholder="URL">
-                </div>
+                {{ form_row(form.userEmail) }}
+                {{ form_row(form.siteUrl) }}
             </div>
             <div class="row">
-                <div class="form-group col-lg-5 col-md-5 col-sm-5">
-                    <label for="user-phone" class="invisible">Phone number</label>
-                    <input name="user[userPhone]" value="<%- userPhone %>" type="text" class="form-control" id="user-phone" placeholder="Phone number">
-                </div>
-                <div class="form-group col-lg-2 col-md-2 col-sm-2">
-                    <label for="user-skill" class="invisible">Skill number</label>
-                    <input name="user[userSkill]" value="<%- userSkill %>" type="text" class="form-control" id="user-skill" placeholder="Skill number">
-                </div>
-                <div class="form-group col-lg-3 col-md-3 col-sm-3 user-form-gender">
-                    <label class="radio-inline">
-                        <input name="user[userGender]" <%- gender(userGender, 0) %> type="radio" id="user-gender-male" value="0">
-                        <span>Male</span>
-                    </label>
-                    <label class="radio-inline">
-                        <input name="user[userGender]" <%- gender(userGender, 1) %> type="radio" id="user-gender-female" value="1">
-                        <span>Female</span>
-                    </label>
-                </div>
+                {{ form_row(form.userPhone) }}
+                {{ form_row(form.userSkill) }}
+                {{ form_row(form.userGender) }}
             </div>
-            <div class="row">
-                <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                    <label for="password" class="invisible">Password</label>
-                    <input name="user[password][first]" type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                    <label for="repeat-password" class="invisible">Repeat password</label>
-                    <input name="user[password][second]" type="password" class="form-control" id="repeat-password" placeholder="Repeat password">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-lg-10 col-md-10 col-sm-10">
-                    <label for="user-about" class="invisible">Enter a brief description of yourself and interest</label>
-                    <input name="user[userAbout]" value="<%- userAbout %>" type="text" class="form-control" id="user-about" placeholder="Enter a brief description of yourself and interest">
-                </div>
-            </div>
-        </form>
+
+            {{ form_row(form.password) }}
+            {{ form_row(form.userAbout) }}
+        {{ form_end(form) }}
+
     </div>
 </script>
 
+{% endblock %}

@@ -13,9 +13,13 @@
     {# Templates #}
     {% include "default/layout.html.twig" %}
     {% include "default/user.html.twig" %}
-    {% include "default/user/edit.html.twig" %}
+
+    {% block user_edit %}
+        {% include "default/user/edit.html.twig" %}
+    {% endblock %}
 
 {% endblock %}
+
 
 {% block javascripts %}
     <script type="text/javascript">

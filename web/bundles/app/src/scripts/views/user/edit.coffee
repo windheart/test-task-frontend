@@ -42,13 +42,6 @@ define 'views/user/edit', [
         "user[userEmail]":
           required: true
 
-        "user[password][first]":
-          required: true
-
-        "user[password][second]":
-          required: true
-          equalTo: "#password"
-
       messages:
         "user[userName]":
           required: "Name required"
@@ -56,12 +49,6 @@ define 'views/user/edit', [
         "user[userEmail]":
           required: "Email required"
 
-        "user[password][first]":
-          required: "Password required"
-
-        "user[password][second]":
-          required: "Repeat password, please"
-          equalTo: "Passwords do not match"
 
       highlight: (element) ->
         $(element).parents(".form-group").addClass( "has-error" )

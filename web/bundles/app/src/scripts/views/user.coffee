@@ -13,9 +13,8 @@ define 'views/user', [
         return unless data
         moment().year(data.year).month(data.month).date(data.day).format("DD.MM.YYYY")
   
-      gender: (data) ->
-        return unless data
-        if data is 0 then "Male" else "Female"
+      gender: (currentValue) ->
+        if not currentValue then "Male" else "Female"
   
     ui:
       "edit": "[data-action=edit]"

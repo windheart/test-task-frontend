@@ -24168,13 +24168,6 @@ var requirejs, require, define;
           },
           "user[userEmail]": {
             required: true
-          },
-          "user[password][first]": {
-            required: true
-          },
-          "user[password][second]": {
-            required: true,
-            equalTo: "#password"
           }
         },
         messages: {
@@ -24183,13 +24176,6 @@ var requirejs, require, define;
           },
           "user[userEmail]": {
             required: "Email required"
-          },
-          "user[password][first]": {
-            required: "Password required"
-          },
-          "user[password][second]": {
-            required: "Repeat password, please",
-            equalTo: "Passwords do not match"
           }
         },
         highlight: function(element) {
@@ -24310,11 +24296,8 @@ var requirejs, require, define;
             }
             return moment().year(data.year).month(data.month).date(data.day).format("DD.MM.YYYY");
           },
-          gender: function(data) {
-            if (!data) {
-              return;
-            }
-            if (data === 0) {
+          gender: function(currentValue) {
+            if (!currentValue) {
               return "Male";
             } else {
               return "Female";
