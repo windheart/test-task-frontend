@@ -1,13 +1,44 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="/bundles/app/css/app.css" />
+    <link rel="stylesheet" content="text/css" href="bundles/app/public/styles/app.css">
 {% endblock %}
 
+
 {% block body %}
-    <div id="app" data-user='{{ user|raw }}'></div>
+
+    {# App #}
+    <div id="app"></div>
+
+    {# Templates #}
+    {% include "default/layout.html.twig" %}
+    {% include "default/user.html.twig" %}
+    {% include "default/user/edit.html.twig" %}
+
 {% endblock %}
 
 {% block javascripts %}
-    <script src="/bundles/app/js/app.js"></script>
+    <script type="text/javascript">
+        window.appData = {
+            user: {
+                id: {{ user.id }},
+
+                userName: "{{ user.userName }}",
+                userEmail : "{{ user.userEmail }}",
+
+                userBirthday: {
+                    year : {{ user.userBirthday|date("Y") }},
+                    month: {{ user.userBirthday|date("n") }},
+                    day  : {{ user.userBirthday|date("j") }}
+                },
+
+                userGender: {{ user.userGender }},
+                siteUrl   : "{{ user.siteUrl }}",
+                userPhone : "{{ user.userPhone }}",
+                userSkill : "{{ user.userSkill }}",
+                userAbout : "{{ user.userAbout }}"
+            }
+        }
+    </script>
+    <script type="text/javascript" src="bundles/app/public/scripts/app.js"></script>
 {% endblock %}

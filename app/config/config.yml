@@ -34,6 +34,7 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    cache           :  false
 
 # Doctrine Configuration
 doctrine:
@@ -72,12 +73,48 @@ assetic:
     bundles:
         - AppBundle
     #java: /usr/bin/java
+    assets:
+        styles:
+            inputs:
+                - 'bundles/app/src/styles/app.scss'
+            options:
+                output: 'bundles/app/public/styles/app.css'
+
+        scripts:
+            inputs:
+                - 'bundles/app/node_modules/jquery/dist/jquery.js'
+                - 'bundles/app/node_modules/jquery-validation/dist/jquery.validate.js'
+
+                - 'bundles/app/node_modules/moment/moment.js'
+                - 'bundles/app/node_modules/underscore/underscore.js'
+
+                - 'bundles/app/node_modules/backbone/backbone.js'
+                - 'bundles/app/node_modules/backbone.wreqr/lib/backbone.wreqr.js'
+                - 'bundles/app/node_modules/backbone.babysitter/lib/backbone.babysitter.js'
+                - 'bundles/app/node_modules/backbone.syphon/lib/backbone.syphon.js'
+                - 'bundles/app/node_modules/backbone.marionette/lib/backbone.marionette.js'
+
+                - 'bundles/app/node_modules/almond/almond.js'
+
+                - 'bundles/app/src/scripts/models/user.coffee'
+                - 'bundles/app/src/scripts/vent.coffee'
+                - 'bundles/app/src/scripts/views/user/edit.coffee'
+                - 'bundles/app/src/scripts/views/user.coffee'
+                - 'bundles/app/src/scripts/controllers/main.coffee'
+                - 'bundles/app/src/scripts/routers/main.coffee'
+                - 'bundles/app/src/scripts/views/layout.coffee'
+                - 'bundles/app/src/scripts/app.coffee'
+            options:
+                output: 'bundles/app/public/scripts/app.js'
+
     filters:
         cssrewrite: ~
         compass:
-          apply_to: "\.scss$"
+            bin: 'c:\Ruby22-x64\bin\compass'
+            apply_to: '\.scss$'
         coffee:
-          apply_to: "\.coffee$"
+            bin: 'web/bundles/app/node_modules/coffee-script/bin/coffee'
+            apply_to: '\.coffee$'
 
 fos_rest:
     view:

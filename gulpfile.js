@@ -30,7 +30,7 @@ gulp.task('styles', ['clean'], function () {
     gulp.src('app/Resources/assets/fonts/**/*')
         .pipe(gulp.dest('web/bundles/app/fonts'));
 
-    gulp.src('app/Resources/assets/styles/user.scss')
+    gulp.src('app/Resources/assets/styles/app.scss')
         .pipe(sass())
         .pipe(concat('app.css'))
         .pipe(gulp.dest('web/bundles/app/css'))
